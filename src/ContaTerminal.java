@@ -1,15 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+
 public class ContaTerminal {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        //Solicita os dados dos usuários
+        System.out.println("Por favor, digite o número da conta: ");
+        int numero = scanner.nextInt();
+        scanner.nextLine(); //Limpa o buffer do teclado
+
+        System.out.print("Por favor, digite o número da Agência: ");
+        String agencia = scanner.nextLine();
+
+        System.out.print("Por favor, digite o nome do cliente: ");
+        String nomeCliente = scanner.nextLine();
+
+        System.out.println("Por favor, digite o saldo: ");
+        double saldo = scanner.nextDouble();
+
+        //Exibe mensagem final
+        System.out.println("Olá " +nomeCliente +",obrigado por criar uma conta em nosso banco, sua agência é "
+                + agencia + ",conta " + numero + " e seu saldo " + saldo + " já está disponível para saque!");
+
+        scanner.close();
     }
 }
